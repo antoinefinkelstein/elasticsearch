@@ -49,6 +49,8 @@ RUN set -ex \
 		chown -R elasticsearch:elasticsearch "$path"; \
 	done
 
+RUN bin/elasticsearch-plugin install https://github.com/jprante/elasticsearch-langdetect/releases/download/2.3.3.0/elasticsearch-langdetect-2.3.3.0-plugin.zip
+
 COPY config ./config
 
 VOLUME /usr/share/elasticsearch/data
